@@ -1,0 +1,63 @@
+zipit
+=====
+
+Installation
+-----------
+
+	To install do the following:
+	1. Download ZIP from above and extract locally on your computer. <br /> 
+	2. Upload backupdb.aspx to a directory that has 777 permissions via FTP. <br />
+	3. If you do not already have the Rackspace CloudFiles DLL copy both DLL's 
+	from the bin direcotry of this project and upload to your sites bin directory.
+	
+	In order to use the MSSQL Backup Utility please be sure to install the following stored procedure:
+	
+	1. To install a stored procedure open up SSMS (SQL Server Management Studio) <br />
+	2. Select New Query in the upper right hand corener.  <br />
+	3. In the query window enter the following:<br />
+		
+	<pre>
+		
+		set ANSI_NULLS ON
+		set QUOTED_IDENTIFIER ON
+		GO
+	
+		CREATE PROCEDURE [dbo].[FullBackup]
+		 @FileName nvarchar(256)
+		AS
+		BEGIN
+	
+		SET NOCOUNT ON;
+	
+		BACKUP DATABASE [123456_YourDatabase] TO DISK = @FileName WITH COPY_ONLY, NOFORMAT, NOINIT, NAME = N'Full Database Backup', SKIP, NOREWIND, NOUNLOAD, STATS = 10
+	
+		END
+	
+	</pre>
+	
+Usage
+-----
+
+	
+
+
+Updating
+------------
+
+	To update to the lastest version simply re-install using instructions above
+
+License
+------------
+
+    By installing Cron MSSQL ASPX Backup you agree that this feature is an Unsupported Service 
+    (as defined herein) and you also agree to the terms of the GPL License! 
+    See: GPL v3 -- http://www.gnu.org/licenses/gpl-3.0.en.html
+
+
+    If you use the tool described in this article, you agree that the tool is an “Unsupported Service”. 
+    Rackspace makes no representation or warranty whatsoever regarding any Unsupported Service, and you 
+    agree that Rackspace will not be liable to you for any loss or damage arising from the provision of 
+    the Unsupported Service.  The Service Level Guaranties will not apply to the Unsupported Service, or 
+    any other aspect of your services that are adversely affected by the Unsupported Service.  
+    You acknowledge that Unsupported Services may not interoperate with Rackspace’s other services or 
+    other third party services you use.
