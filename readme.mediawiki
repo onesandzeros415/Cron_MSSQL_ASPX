@@ -4,7 +4,7 @@ zipit
 Installation
 -----------
 
-	To install do the following:
+	To install do the following:<br />
 	1. Download ZIP from above and extract locally on your computer. <br /> 
 	2. Upload backupdb.aspx to a directory that has 777 permissions via FTP. <br />
 	3. If you do not already have the Rackspace CloudFiles DLL copy both DLL's 
